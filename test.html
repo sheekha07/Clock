@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+</head>
+<style>
+    .test{
+        background-color: yellow;
+        color: black;
+    }
+
+
+
+</style>
+
+
+<body>
+    <div id="container">
+        <ul id="list">
+
+        </ul>
+    </div>
+
+    <script>
+        let listElement = document.getElementById('list');
+
+
+        let createListItem = document.createElement('li');
+        createListItem.textContent = "Hello";
+        createListItem.classList="test";
+        createListItem.style.fontSize = '2rem';
+        createListItem.classList.remove('test');
+
+        listElement.append(createListItem);
+
+
+        console.log(listElement);
+
+
+    </script>
+
+
+
+</body>
+</html>

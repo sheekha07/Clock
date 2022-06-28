@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&effect=neon">
+    <title>Stopwatch</title>
+    <link rel="stylesheet" href="css/stopwatch.css">
+</head>
+<body>
+  
+  <!-- Header -->
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a href="clock.html">Timer</a>
+        </li>
+        <li class="nav-item">
+          <a href="stopwatch.html">Stopwatch</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">Alarm</a>
+        </li>
+        <li class="nav-item">
+          <a href="#">World Clock</a>
+        </li>
+      </ul></div>
+      <div class="main">
+        <!--Stopwatch -->
+    <div class="container">
+        <h2><span class="NEON">STOPWATCH</span></h2>
+          <div class="border-0">
+          <div class="display">
+            <p class="time" id="timerHrs">00</p> :
+            <p class="time" id="timerMins">00</p> :
+            <p class="time" id="timerSec">00</p> :
+            <p class="time" id="timerMilisec">00</p>
+         </div></div>
+  
+        <div class="controls">
+          <i class="material-icons" id="startBtn" style="font-size: 50px;">play_circle_outline</i>
+          <i class="material-icons disabled" id="resetBtn"style="font-size: 50px;">replay</i>
+          <i class="material-icons " id="pauseBtn"style="font-size: 50px;">pause_circle_outline</i>
+          <i class="material-icons " id="lapBtn"  style="font-size: 50px;">add_circle_outline</i>
+         
+          </div>
+          <!-- list of Laps -->
+        <div class="lap" id="lapAdd">
+          <p class="laprecord">Laps</p>
+        </div>
+      
+    </div>
+      <script src="js/stopwatch.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clock</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Orbitron&effect=neon">
+    <style>
+        body {
+    background: black;
+}
+.border{
+    border: 8px solid white;
+    border-radius: 50%;
+    width: 700px;
+    height: 700px;
+    position: absolute;
+    top: 10%;
+    left: 30%;
+    margin-top: -70px;
+    margin-left: -50px;
+}
+.clock {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    color: #17D4FE;
+    font-size: 60px;
+    font-family: Orbitron;
+    letter-spacing: 7px; 
+    font-size: 80px;
+    color: #fff;
+    text-align: center;
+    animation: clock 1s ease-in-out infinite alternate;
+}
+   @-webkit-keyframes clock {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #0165c3, 0 0 30px #0165c3, 0 0 40px #0165c3, 0 0 50px #0165c3, 0 0 60px #0165c3;
+  }
+  
+  to {
+    text-shadow: 0 0 10px #fff, 0 0 10px #fff, 0 0 20px #0165c3, 0 0 30px #0165c3, 0 0 40px #0165c3, 0 0 50px #0165c3, 0 0 60px #0165c3;
+  }
+}
+@media screen and (min-width: 700px) {
+    .border{
+        width: 500px;
+        height: 500px;
+        margin-top: -50px;
+        margin-left: 60px;
+    }
+    .clock{
+        font-size: 40px;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .border{
+    width: 322px;
+    height: 321px;
+    margin-top: 39px;
+    margin-left: -80px
+;
+    }
+    .clock{
+        font-size: 30px;
+    }
+}
+    
+}
+    </style>
+    
+}
+    </style>    
+</head>
+<body>
+    <div class="border">
+    <div id="ClockDisplay" class="clock" onload="showTime()"></div></div>
+    <script src="js/clock.js"></script>
+</body>
+</html>

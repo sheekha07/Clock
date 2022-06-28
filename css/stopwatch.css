@@ -1,0 +1,527 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    background: #150247;
+}
+.main{
+    width: 450px;
+    height: 670px;
+    position: relative;
+    border  : 14px solid white;
+     margin:    1px auto;
+     margin-top: 10px;
+    align-items: center;
+}
+.header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+/*navbar */
+ul {
+    list-style-type: none;
+    margin: 0 auto;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+    background-color: linear-gradient(90deg, rgb(36, 74, 101) 0%, rgb(13, 124, 192) 38%, rgb(27, 121, 229) 100%);
+  }
+  
+  .nav-item{
+    margin-left: -5px;
+  }
+  
+  .nav-item a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    width: 150px;
+    padding: 14px 16px;
+    text-decoration: none;
+    position: relative;
+  }
+  .nav-item a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+    background-color: #92c1da;
+    bottom: 0;
+    left: 0;
+    transform-origin: right;
+    transform: scaleX(0);
+    transition: transform .3s ease-in-out;
+  }
+  
+  .nav-item a:hover::before {
+    transform-origin: left;
+    transform: scaleX(1);
+  }
+  .nav-item a:hover{
+    color: aqua;
+  }
+  /*stopwatch */
+   h1 {
+    font-size: 48px;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 200;
+  
+    text-align: center;
+    line-height: 59px;
+  
+    padding: 0 64px;
+    margin: 0;
+  }
+
+  .NEON{                         /*NEON COLOR*/
+  font-weight: 400;
+  color: rgb(255, 255, 255);
+  text-shadow:
+      0 0 42px rgb(0, 229, 255),
+      0 0 82px rgb(0, 229, 255),
+      0 0 92px rgb(0, 255, 242),
+      0 0 102px rgb(0, 255, 255),
+      0 0 151px rgb(0, 204, 255);
+}
+.container {
+  display: grid;
+  justify-items: center;
+  grid-row-gap: 23px;
+  width: 100%;
+  padding-top: 25px;
+}
+
+.border{              
+  display: flex;
+  align-items: center;
+  border: none;
+  justify-content: space-around;
+  
+}
+.display {
+  display: flex;
+  left: 50%;
+  align-items: baseline;
+  justify-content: center;
+  color: white;
+  font-size: 2.5rem;
+}
+
+.time{                 /*all TIME text in orbitron family*/
+  font-family: Orbitron;
+  letter-spacing: 1px;
+  font-weight: 500;
+  font-size: 40px;
+  color: rgb(255, 255, 255);
+  animation: flicker 1.5s infinite alternate;
+  margin: 5px;
+}
+@keyframes flicker {
+    
+  100% {
+
+      text-shadow:
+      0 0 4px #fff,
+      0 0 11px #fff,
+      0 0 19px #fff,
+      0 0 40px rgb(0, 247, 255),
+      0 0 80px  rgb(0, 247, 255),
+      0 0 90px  rgb(0, 247, 255),
+      0 0 100px  rgb(0, 247, 255),
+      0 0 150px  rgb(0, 247, 255);
+  
+  }
+  
+  0% {
+
+    text-shadow:
+    0 0 2px #fff,
+    0 0 4px #fff,
+    0 0 6px #fff,
+    0 0 10px  rgb(0, 247, 255),
+    0 0 45px  rgb(0, 247, 255),
+    0 0 55px  rgb(0, 247, 255),
+    0 0 70px  rgb(0, 247, 255),
+    0 0 80px  rgb(0, 247, 255);
+
+}
+}
+.laprecord{
+  font-family: Orbitron;
+  text-decoration-style: dashed;
+  letter-spacing: 1px;
+  font-weight: 700;
+  font-size: 20px;
+  color: rgb(255, 255, 255);
+  
+}
+.controls {
+  display: flex;
+  justify-content: space-between;
+
+  width: 187px;
+}
+.lap{                                    /*Laps list design */
+  margin-top: 0px;
+  height: 360px;
+  width: 85%;
+  scroll-behavior: smooth;
+  border-radius: 20px;
+  position: absolute;
+  background: #00073a;
+  box-shadow: 0px 0px 20px #00073a;
+  padding: 20px 30px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: relative;
+}
+.lap::-webkit-scrollbar{
+  width: 10px;
+}
+.lap::-webkit-scrollbar-thumb{
+  background-color: rgb(1, 182, 210);
+  border-radius: 50px;
+  padding-top: 20px;
+}
+.lap::-webkit-scrollbar-thumb:hover {
+  background: rgb(0, 33, 39); ; 
+}
+#lapAdd{
+  display: none;
+}
+i{
+  cursor: pointer;
+  padding: 0;
+  color: yellow;
+  border: none;
+  margin: 0;
+  outline: none;
+}
+
+#playBtn {                                 /*play button */
+  display: inline-block;
+}
+
+#pauseBtn {                /*pause button */
+  display: none;
+}
+#lapBtn{
+  display: none;
+}
+#resetBtn{
+  display: inline-block;
+}
+
+/* RESPONSIVE STOPWATCH */
+   @media screen and (max-width: 900px) {
+    .main{
+      width: 400px;
+      height: 600px;
+      position: relative;
+      border  : 14px solid white;
+      padding: auto;
+      margin-top: 10px;
+       margin:    1px auto;
+      align-items: center;
+  }
+    ul {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    
+    ul .nav-item a {
+      float: left;
+      padding: 15px;
+    }
+    .nav-item a::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #92c1da;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .2s ease-in-out;
+    }
+    
+    .nav-item a:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    .border{
+    display: flex;
+  align-items: center;
+
+  justify-content: space-around;
+
+  }
+  .clock{
+      font-size: 40px;
+  }
+  .NEON{
+    font-weight: 400;
+    color: #fff;
+    text-shadow:
+        0 0 7px #fff,
+        0 0 10px #fff,
+        0 0 21px #fff,
+        0 0 42px rgb(0, 229, 255),
+        0 0 82px rgb(0, 229, 255),
+        0 0 92px rgb(0, 255, 242),
+        0 0 102px rgb(0, 255, 255),
+        0 0 151px rgb(0, 204, 255);
+  }
+  .display {
+    display: flex;
+    left: 50%;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 2.5rem;
+  }
+
+  .time{
+    font-family: Orbitron;
+    letter-spacing: 7px;
+    font-weight: 700;
+    font-size: 25px;
+    color: rgb(255, 255, 255);
+    animation: flicker 1.5s infinite alternate; 
+  }
+  .controls {
+    display: flex;
+    justify-content: space-between;
+  
+    width: 187px;
+  }
+  
+  button {
+    cursor: pointer;
+    background: white;
+    padding: 0;
+    border: none;
+    margin: 0;
+    outline: none;
+    border-radius: 80%;
+  }
+  .laps {
+    margin-top: 40px;
+    height: 400px;
+    scroll-behavior: smooth;
+  }
+  
+  #playBtn {
+    display: block;
+  }
+  
+  #pauseBtn {
+    display: none;
+  }
+  #lapBtn{
+    display: none;
+  }
+  #resetBtn{
+    display: inline-block;
+  }
+  .disabled{
+    color: dimgrey !important;
+  }
+  .disabled:hover{
+    color: rgb(121, 84, 0);
+    border-radius: 50%;
+      box-shadow: 0px 0px 5px #AF8C01;
+      cursor: pointer;
+    }
+
+    .singleLap{
+      color: white;
+    }
+    .singleLap{
+      margin-top: 10px;
+      flex-direction: row;
+      }
+      .lap{                                    /*Laps list design */
+        margin-top: 0px;
+        height: 300px;
+        width: 85%;
+        scroll-behavior: smooth;
+        border-radius: 20px;
+        position: absolute;
+        background: #000128;
+        padding: 20px 30px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+      }
+      
+      #lapAdd{
+        display: none;
+      }
+  }
+  @media screen and (max-width: 400px)
+  { 
+    .main{
+      width: 350px;
+      height: 600px;
+      position: relative;
+      border  : 14px solid white;
+      padding: auto;
+      margin-top: 10px;
+       margin:    1px auto;
+      align-items: center;
+  }
+    ul {
+      width: 100%;
+      height: auto;
+      position: relative;
+    }
+    
+    ul .nav-item a {
+      float: left;
+      padding: 15px;
+    }
+    .nav-item a::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 4px;
+      border-radius: 4px;
+      background-color: #92c1da;
+      bottom: 0;
+      left: 0;
+      transform-origin: right;
+      transform: scaleX(0);
+      transition: transform .2s ease-in-out;
+    }
+    .display {
+      display: flex;
+      left: 50%;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2.5rem;
+    }
+    .nav-item a:hover::before {
+      transform-origin: left;
+      transform: scaleX(1);
+    }
+    .border{
+      display: flex;
+  align-items: center;
+  justify-content: space-around;
+      }
+      .clock{
+          font-size: 30px;
+      }
+      .NEON{
+        font-weight: 400;
+        color: #fff;
+        text-shadow:
+            0 0 7px #fff,
+            0 0 10px #fff,
+            0 0 21px #fff,
+            0 0 42px rgb(0, 229, 255),
+            0 0 82px rgb(0, 229, 255),
+            0 0 92px rgb(0, 255, 242),
+            0 0 102px rgb(0, 255, 255),
+            0 0 151px rgb(0, 204, 255);
+      }
+      .flicker {
+        animation: flicker 1.5s infinite alternate;     
+      }
+.time{
+  font-family: Orbitron;
+  letter-spacing: 7px;
+  font-weight: 700;
+  font-size: 25px;
+  color: rgb(255, 255, 255);
+}
+
+      .controls {
+        display: flex;
+        justify-content: space-between;
+      
+        width: 187px;
+      }
+      
+      button {
+        cursor: pointer;
+        background: white;
+        padding: 0;
+        border: none;
+        margin: 0;
+        outline: none;
+        border-radius: 80%;
+      }
+      .laps {
+        margin-top: 40px;
+        height: 400px;
+        scroll-behavior: smooth;
+      }
+      
+      #playBtn {
+        display: block;
+      }
+      
+      #pauseBtn {
+        display: none;
+      }
+      #lapBtn{
+        display: none;
+      }
+      #resetBtn{
+        display: inline-block;
+      }
+      .disabled{
+        color: dimgrey !important;
+      }
+      .disabled:hover{
+        color: rgb(121, 84, 0) !important;
+        border-radius: 50%;
+          box-shadow: 0px 0px 5px #AF8C01;
+          cursor: pointer;
+      }
+      .lap{                                    /*Laps list design */
+        margin-top: 0px;
+        height: 300px;
+        width: 85%;
+        scroll-behavior: smooth;
+        border-radius: 20px;
+        position: absolute;
+        background: #00043e;
+        padding: 10px 20px;
+        overflow-y: auto;
+        overflow-x: hidden;
+        position: relative;
+      }
+      
+      #lapAdd{
+        display: none;
+      }
+      .singleLap{
+        color: white;
+      }
+      .singleLap{
+        margin-top: 10px;
+        flex-direction: row;
+        }
+}
+
+.singleLap{
+  color: white;
+}
+.singleLap{
+  margin-top: 10px;
+  flex-direction: row;
+  }
